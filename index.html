@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PISEY | SREYSART</title>
+    <link rel="icon" href="/images.png" type="image/x-icon" sizes="256x256">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #dbdbd5;
+            color: #333;
+        }
+
+        
+        .navbar {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;                
+            display: flex;
+            justify-content: center;
+            background: rgba(238, 238, 238, 0.9);
+            padding: 6px 20px;           
+            border-radius: 20px;        
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+            z-index: 1000;
+            font-weight: 500;
+            font-size: 14px;         
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a.active {
+            color: #000; 
+            font-weight: bold;
+        }
+
+        
+        .hero {
+            text-align: center;
+            margin-top: 120px;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px 0 20px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .title {
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .desc {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        
+        .social {
+            margin-top: 30px;
+        }
+
+        .social a {
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 10px;
+            color: #333;
+        }
+
+        .social a:hover {
+            color: #000;
+        }
+
+        .round-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        
+        section {
+            height: 100vh;
+            padding: 120px 30px 30px 30px;
+        }
+
+       
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .meme{
+            text-align: center;
+             font-family: -apple-system, BlinkMacSystemFont,
+               "SF Pro Text", "SF Pro Display",
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #333;
+        }
+        .about-img {
+            display: block;
+            margin: 20px auto;   
+            height: 500px;  
+            border-radius: 12px;     
+        }
+.project {
+    text-align: left;          
+    max-width: 900px;          
+    margin: 0 auto;            
+    padding: 24px;            
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;       
+    background-color: #ffffff; 
+    font-size: 16px;          
+}
+.project {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.project-content {
+    display: flex;
+    align-items: center;     
+    gap: 24px;                
+    flex-wrap: wrap;          
+}
+
+.project-text {
+    flex: 1;                  
+    text-align: left;
+}
+
+.project-text h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.project-text p {
+    color: #374151;
+    line-height: 1.6;
+}
+
+.project-image img {
+    max-width: 300px;         
+    width: 100%;
+    border-radius: 8px;
+}
+.project-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 28px;
+    color: #111827;
+}
+
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.project-text {
+    flex: 1;
+    text-align: left;
+}
+
+.project-text h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.project-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.project-image img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.05); 
+}
+
+
+@media screen and (max-width: 0px) {
+    .project-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .project-image img {
+        margin-top: 16px;
+        max-width: 100%;
+    }
+}
+.tech-stack {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.tech {
+    background-color: #101518; 
+    color: #bec7cb;            
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.skills {
+    background-color: #f9fbfb; 
+    color: #111313;            
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.tech-stack {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-item {
+  position: relative;
+}
+
+.skills {
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.dropdown img {
+  width: 32px;
+  height: 32px;
+}
+
+.skill-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+#experience {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.timeline-item {
+
+  grid-template-columns: 160px 1fr;
+  margin: 10px;
+ display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.date {
+  font-size: 14px;
+  color: #777;
+  margin: 10px;
+}
+
+.content {
+  background: #f8f8f8;
+  border-radius: 20px 20px;
+  padding: 15px 20px;
+
+ 
+}
+
+.content h3 {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.content h4 {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  color: #555;
+  margin: 10px;
+}
+
+.content p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 10px;
+}
+.icon {
+margin: 60px;
+}
+#contact {
+  max-width: 600px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  resize: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+.contact-form button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #333;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer .tech {
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+
+    
+
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+   
+    <section id="home" class="hero">
+        <img src="round.png" alt="Avatar" class="avatar">
+        <h1>Hi</h1>
+        <div class="title">
+            <strong>Full-stack Developer</strong>, constantly fueling my passion for learning.
+        </div>
+        <div class="desc">
+            I'm always on the lookout for new things to try.
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/pisey.koeung">
+                <img src="facebook.png" class="round-img" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="IG.png" class="round-img" alt="Instagram">
+            </a>
+            <a href="https://www.tiktok.com">
+                <img src="tiktok.png" class="round-img" alt="TikTok">
+            </a>
+        </div>
+    </section>
+
+    
+<section id="about">
+    <h2 class="meme">About Me</h2>
+    <img src="pisey.jpg" class="about-img">
+    <h4 class="meme">I've been working as a full-stack developer for 2 years. During these time, 
+        I've worked on various fields such as frontend development with NextJS and Angular (legacy code), 
+        backend development with Spring, Blockchain and Smart Contract with Solidity.</h4>
+</section>
+
+    
+<section id="projects" class="project-section">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="project-card">
+        <div class="project-text">
+            <h3>CamDL KYC Portal</h3>
+            <p>
+                CamDL Hybrid Permissioned Blockchain Registration Portal is a cutting-edge platform developed using Next.js and Chakra UI. 
+                The project incorporates the utilization of smart contracts written in Solidity.
+            </p>
+
+            <div class="tech-stack">
+                <span class="tech">React</span>
+                <span class="tech">Next.js</span>
+                <span class="tech">Prisma</span>
+            </div>
+        </div>
+
+        <div class="project-image">
+            <img src="projects.jpg" alt="CamDL Project Screenshot">
+        </div>
+    </div>
+    
+        <div class="project-card">
+   
+                <div class="project-image">
+            <img src="projects_01.jpg" alt="CamDL Project Screenshot">
+        </div>
+        <div class="project-text">
+            <h3>PISEY's Home Chores</h3>
+            <p>
+                The First SvelteKit personal project is a web app that helps 
+                individuals manage and view their home chores schedule. It integrates 
+                with Notion for easy data access and updates.
+            </p>
+
+           
+            <div class="tech-stack">
+                <span class="tech">SvelteKit</span>
+                <span class="tech">TailwindCSS</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <section id="skills">
+  <center><h2>Skills</h2></center> 
+
+  <div class="tech-stack">
+    
+    <div class="skill-item">
+      <span class="skills">HTML</span>
+      <div class="dropdown">
+        <img src="round.png" alt="SvelteKit">
+        <div class="dropdown-text">
+  <p>HTML</p>
+<p>Skill proficiency: 60% </p>
+</div>
+
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <span class="skills">CSS</span>
+      <div class="dropdown">
+        <img src="css.png" alt="TailwindCSS">
+        <p>Utility-first CSS Framework</p>
+      </div>
+    </div>
+
+     <div class="skill-item">
+      <span class="skills">PHP</span>
+      <div class="dropdown">
+        <img src="php.jpg" alt="TailwindCSS">
+        <p>Skill : 80%</p>
+      </div>
+    </div>
+
+     <div class="skill-item">
+      <span class="skills">Database</span>
+      <div class="dropdown">
+        <img src="database.jpg" alt="TailwindCSS">
+        <p>Skill : 200% fail</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <section id="experience">
+  <center><h2>My Experience</h2></center>
+<div class="timeline-item">
+    
+    <div class="icon">💻</div>
+  
+
+  <div class="content">
+    <span class="date">Dec 2020 – Nov 2021</span>
+    <h3>IT Support</h3>
+    <h4>Metfone Headquarter</h4>
+    <p>
+      My first-ever job, both in life and in the tech field, was an invaluable experience.
+      I gained knowledge about various job aspects and honed my programming skills.
+    </p>
+  </div>
+</div>
+
+
+
+    <div class="timeline-item">
+      <div class="icon">🧑‍💻</div>
+      <div class="content">
+         <span class="date">Dec 2021 – Feb 2022</span>
+        <h3>Developer Internship</h3>
+        <h4>Techo Startup Center</h4>
+        <p>
+          In my first developer role, I gained comprehensive knowledge and skills
+          through hands-on experience, including creating a digital signature
+          proof of concept.
+        </p>
+       
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="icon">🚀</div>
+      <div class="content"> 
+        <span class="date">2022 – Present</span>
+        <h3>Full-Stack Developer</h3>
+        <h4>Techo Startup Center</h4>
+        <p>
+          After a successful internship, I landed a full-stack developer role
+          working on diverse projects and real-world applications.
+        </p>
+       
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    </section>
+
+    <section id="contact">
+  <h2>Call tomorrow</h2>
+   <center> <p>if you love me here is my Email kgpisey@gmail.com</p></center> 
+
+  <form class="contact-form">
+    <input type="email" placeholder="Your email" required>
+    <textarea placeholder="Your message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <footer class="footer">
+    <p>© 2025 Koeung Pisey. All rights reserved.</p>
+    <p >
+      About this website: built with Next.js, Tailwind CSS, and React.
+    </p>
+  </footer>
+</section>
+
+
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
